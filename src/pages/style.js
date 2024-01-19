@@ -7,7 +7,7 @@ const styles = {
   },
   header: {
     textAlign: "center",
-    marginTop: "10%",
+    width: "100%",
   },
   container: {
     display: "flex",
@@ -18,7 +18,7 @@ const styles = {
   uploadbox: {
     border: "2px dashed #ccc",
     borderradius: "10px",
-    padding: "100px",
+    padding: "50px",
     textalign: "center",
     cursor: "pointer",
     margintop: "20px",
@@ -31,6 +31,26 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
+    width: "100%",
+  },
+  imagePreview: {
+    width: "300px",
+    height: "300px",
+    marginTop: "20px",
+  },
+  caption: {
+    margin: " 20px 0px 20px 0px",
+    fontSize: "20px",
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "20px",
+  },
+  speech: {
+    fontSize: "50px",
+    color: "black",
+    cursor: "pointer",
   },
 };
 
