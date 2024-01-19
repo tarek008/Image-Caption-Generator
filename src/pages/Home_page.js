@@ -13,7 +13,7 @@ const Homepage = () => {
 
     try {
       const response = await fetch(
-        "https://my-caption-applast-altlcaiirq-od.a.run.app/process-image/",
+        "https://my-caption-app-altlcaiirq-od.a.run.app/process-image/",
         {
           method: "POST",
           body: formData,
