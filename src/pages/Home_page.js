@@ -14,6 +14,11 @@ const Homepage = () => {
   const [loading, setLoading] = useState(false);
   const [isCameraOn, setIsCameraOn] = useState(false); // State to manage camera activation
   const webcamRef = useRef(null); // Reference to the webcam component
+  const [useRearCamera, setUseRearCamera] = useState(true);
+
+  const videoConstraints = {
+    facingMode: useRearCamera ? { exact: "environment" } : "user",
+  };
 
   useEffect(() => {
     // This will clean up the object URL when the component unmounts
@@ -105,7 +110,10 @@ const Homepage = () => {
       setLoading(false);
     }
   }, [webcamRef]);
-
+  // Function to toggle between front and rear cameras
+  const toggleCamera = () => {
+    setUseRearCamera(!useRearCamera);
+  };
   return (
     <div style={styles.container}>
       <div style={styles.header}>
@@ -145,10 +153,12 @@ const Homepage = () => {
         <Webcam
           audio={false}
           ref={webcamRef}
+          videoConstraints={videoConstraints}
           screenshotFormat="image/jpeg"
           style={styles.webcam} // You need to define this style
         />
       )}
+      <Button onClick={toggleCamera}>Toggle Camera</Button>
       <Button onClick={() => setIsCameraOn(!isCameraOn)}>
         {isCameraOn ? "Turn off Camera" : "Turn on Camera"}
       </Button>
