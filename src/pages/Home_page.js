@@ -11,7 +11,7 @@ const Homepage = () => {
     const formData = new FormData();
     formData.append("file", imageFile);
 
-    /* try {
+    try {
       const response = await fetch(
         "https://my-caption-app1-altlcaiirq-uc.a.run.app/process-image/",
         {
@@ -28,7 +28,7 @@ const Homepage = () => {
       return result.text;
     } catch (error) {
       console.error("There was a problem with the fetch operation:", error);
-    }*/
+    }
   }
 
   const handleFileChange = async (event) => {
