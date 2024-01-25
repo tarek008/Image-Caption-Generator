@@ -14,7 +14,7 @@ const Homepage = () => {
   const [loading, setLoading] = useState(false);
   const [isCameraOn, setIsCameraOn] = useState(false); // State to manage camera activation
   const webcamRef = useRef(null); // Reference to the webcam component
-  const [useRearCamera, setUseRearCamera] = useState(true);
+  const [useRearCamera, setUseRearCamera] = useState(false);
 
   const videoConstraints = {
     facingMode: useRearCamera ? { exact: "environment" } : "user",
